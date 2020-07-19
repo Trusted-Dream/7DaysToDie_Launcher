@@ -135,7 +135,7 @@ class SDTD(object):
             status = self.server_status()[0]
             timemsg = time.strftime("%Y/%m/%d %H:%M:%S ", time.strptime(time.ctime()))
             payload = {
-                "content" : "<@380753105123409920>\n" + timemsg + "--- サーバの起動に失敗しました。状況を確認してください。\n" + status
+                "content" : timemsg + "--- サーバの起動に失敗しました。状況を確認してください。\n" + status
             }
             requests.post(self.discord, data=payload)
             sys.exit()
@@ -157,7 +157,7 @@ class SDTD(object):
             status = self.server_status()[0]
             timemsg = time.strftime("%Y/%m/%d %H:%M:%S ", time.strptime(time.ctime()))
             payload = {
-                "content" : "<@380753105123409920>\n" + timemsg + "--- サーバの停止に失敗しました。状況を確認してください。\n" + status
+                "content" : timemsg + "--- サーバの停止に失敗しました。状況を確認してください。\n" + status
             }
             requests.post(self.discord, data=payload)
             sys.exit()
